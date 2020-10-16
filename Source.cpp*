@@ -1,0 +1,32 @@
+#include "Header.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() {
+	Circle* spis1;
+	cout << "Enter properies oof circle : ";
+	spis1 = new Circle[];
+	Circle *sdvig = spis1 + 10;
+	Circle *sdvig = spis1 - 20;
+	Circle *sdvig = spis1 * 70;
+	delete[] spis1;
+	Square* spis2;
+	cout << "Enter properies oof square : ";
+	spis2 = new Square[];
+	Square *sdvig = spis2 + 10;
+	Square *sdvig = spis2 - 20;
+	Square *sdvig = spis2 * 70;
+	delete[] spis2;
+
+	Rectangle* spis3;
+	cout << "Enter properies oof rectangle : ";
+	spis3 = new Rectangle[];
+	Rectangle *sdvig = spis3 + 10;
+	Rectangle *sdvig = spis3 - 20;
+	Rectangle *sdvig = spis3 * 70;
+	delete[] spis3;
+	cout << "Press any key!";
+	while (!_kbhit());
+	return 0;
+}
