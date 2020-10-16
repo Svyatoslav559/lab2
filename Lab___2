@@ -1,0 +1,108 @@
+#include "Header.h"
+#include <conio.h>
+#include <math.h>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <cmath>
+using namespace std;
+Circle::Circle() {
+	cout << "Input R="; cin >> r;
+	cout << "Input x of center="; cin >> xC;
+	cout << "Input y of center="; cin >> yC;
+}
+int Circle::getR() { return r; }
+int Circle::getxC() { return xC; }
+int Circle::getyC() { return yC; }
+Circle Circle::operator+(int ob) {
+	cout << "New x=" << getxC() + ob;
+	cout << "New y=" << getyC();
+}
+Circle Circle::operator-(int ob) {
+	cout << "New x=" << getxC();
+	cout << "New y=" << getyC() + ob;
+}
+Square::Square() {
+	cout << "Input a="; cin >> a;
+	cout << "Input left bottom x="; cin >> xSlt;
+	cout << "Input left bottom y="; cin >> ySlt;
+}
+int Square::getxS1() { return xSlt; }
+int Square::getyS1() { return ySlt; }
+int Square::geta() { return a; }
+Square Square::operator+(int ob) {
+	cout << "New x1=" << getxS1() + ob;
+	cout << "New y1=" << getyS1();
+	cout << "New x2=" << getxS1() + ob;
+	cout << "New y2=" << getyS1();
+	cout << "New x3=" << getxS1() + ob;
+	cout << "New y3=" << getyS1();
+	cout << "New x4=" << getxS1() + ob;
+	cout << "New y4=" << getyS1();
+}
+Square Square::operator-(int ob) {
+	cout << "New x1=" << getxS1();
+	cout << "New y1=" << getyS1() + ob;
+	cout << "New x2=" << getxS1();
+	cout << "New y2=" << getyS1() + ob;
+	cout << "New x3=" << getxS1();
+	cout << "New y3=" << getyS1() + ob;
+	cout << "New x4=" << getxS1();
+	cout << "New y4=" << getyS1() + ob;
+}
+Square Square::operator*(int ob) {
+	double sina = sin(ob * (3,14159 / 180));
+	double cosa = cos(ob * (3, 14159 / 180));
+
+	cout << "New x1=" << getxS1();
+	cout << "New y1=" << getyS1();
+	cout << "New x2=" << getxS1() + geta()*cosa - geta()*sina;
+	cout << "New y2=" << getyS1() + geta()*cosa + geta()*sina;
+	cout << "New x3=" << getxS1() + sqrt(2)*geta()*cosa - sqrt(2)*geta()*sina;
+	cout << "New y3=" << getyS1() + sqrt(2)*geta()*cosa + sqrt(2)*geta()*sina;
+	cout << "New x4=" << getxS1() + geta()*cosa - geta()*sina;
+	cout << "New y4=" << getyS1() + geta()*cosa + geta()*sina;
+}
+Rectangle::Rectangle() {
+	cout << "Input a1="; cin >> a1;
+	cout << "Input b1="; cin >> b1;
+	cout << "Input left bottom x="; cin >> xR1;
+	cout << "Input left bottom y="; cin >> xR1;
+}
+int Rectangle::getxR1() { return xR1; }
+int Rectangle::getyR1() { return yR1; }
+int Rectangle::geta1() { return a1; }
+int Rectangle::getb1() { return b1; }
+Rectangle Rectangle::operator+(int ob) {
+	cout << "New x1=" << getxR1() + ob;
+	cout << "New y1=" << getyR1();
+	cout << "New x2=" << getxR1() + ob;
+	cout << "New y2=" << getyR1();
+	cout << "New x3=" << getxR1() + ob;
+	cout << "New y3=" << getyR1();
+	cout << "New x4=" << getxR1() + ob;
+	cout << "New y4=" << getyR1();
+}
+Rectangle Rectangle::operator-(int ob) {
+	cout << "New x1=" << getxR1();
+	cout << "New y1=" << getyR1() + ob;
+	cout << "New x2=" << getxR1();
+	cout << "New y2=" << getyR1() + ob;
+	cout << "New x3=" << getxR1();
+	cout << "New y3=" << getyR1() + ob;
+	cout << "New x4=" << getxR1();
+	cout << "New y4=" << getyR1() + ob;
+}
+Rectangle Rectangle::operator*(int ob) {
+	double sina = sin(ob * (3, 14159 / 180));
+	double cosa = cos(ob * (3, 14159 / 180));
+
+	cout << "New x1=" << getxR1();
+	cout << "New y1=" << getyR1();
+	cout << "New x2=" << getxR1() + geta1()*cosa - geta1()*sina;
+	cout << "New y2=" << getyR1() + geta1()*cosa + geta1()*sina;
+	cout << "New x3=" << getxR1() + sqrt(2)*geta1()*cosa - sqrt(2)*geta1()*sina;
+	cout << "New y3=" << getyR1() + sqrt(2)*geta1()*cosa + sqrt(2)*geta1()*sina;
+	cout << "New x4=" << getxR1() + geta1()*cosa - geta1()*sina;
+	cout << "New y4=" << getyR1() + geta1()*cosa + geta1()*sina;
+}
